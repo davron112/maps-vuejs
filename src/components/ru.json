@@ -1,0 +1,530 @@
+{
+    "header": {
+        "invoices": "Контракты",
+        "addInvoice": "Добавить счет-фактуру",
+        "editInvoice": "Редактировать контракт",
+        "estimates": "Контракты",
+        "addEstimate": "Добавить новое коммерческое предложение",
+        "editEstimate": "Редактировать коммерческое предложение",
+        "template": "Выберите шаблон",
+        "customers": "Клиенты",
+        "addCustomer": "Добавить клиента",
+        "editCustomer": "Изямозай клиент",
+        "selectCurrency": "Выбрать валюту",
+        "billingAddress": "Биллинг-адрес",
+        "shippingAddress": "Адрес доставки",
+        "country": "Выбрать страну",
+        "state": "Выбрать государство",
+        "city": "Выбор города",
+        "payments": "Платежи",
+        "addPayment": "Добавить оплату",
+        "editPayment": "Edit Payment",
+        "expenses": "Расходы",
+        "addExpense": "Добавить расходы",
+        "editExpense": "Вести расходы",
+        "more": "Больше",
+        "expenseCategory": "Категории расходов",
+        "addCategory": "Добавить категорию",
+        "editCategory": "Редактировать категория",
+        "settings": "Настройки",
+        "notifications": "Уведомление",
+        "setting": {
+            "company": "Информация о компании",
+            "account": "Настройки счета",
+            "preferences": "Предпочтения",
+            "LanguageAndCurrency": "Язык и валюта",
+            "endpoint": "Адрес API"
+        },
+        "taxes": "Тип налоги",
+        "addTaxes": "Добавить налог",
+        "editTaxes": "Налог на эдит",
+        "addItem": "Добавить пункт",
+        "editItem": "Редактироват товар",
+        "items": "Предметы",
+        "reports": "Отчеты",
+        "salesReport": "Отчет о продажах",
+        "profitAndLossReport": "Прибыль и отчет об убытках",
+        "expensesReport": "Отчет о расходах",
+        "taxesReport": "Отчет о налогах",
+        "filter": "Фильтры",
+        "back": "Назад"
+    },
+    "tabNavigation": {
+        "invoices": "Счета",
+        "customers": "Клиенты",
+        "payments": "Платежи",
+        "expenses": "Расходы",
+        "more": "Больше"
+    },
+    "invoices": {
+        "title": "Выберите счет-фактуру",
+        "tabs": {
+            "DUE": "ДОЛГ",
+            "DRAFT": "НЕАКТИВНЫЙ",
+            "ALL": "ВСЕ"
+        },
+        "invoiceDate": "Invoice Date",
+        "dueDate": "Срок",
+        "discount": "DISCOUNT",
+        "invoiceNumber": "Номер счета",
+        "referenceNumber": "Справочный номер",
+        "template": "Шаблон",
+        "templatePlaceholder": "Выберите или добавьте новый шаблон",
+        "customer": "Клиент",
+        "customerPlaceholder": "Выбрать или добавить нового клиента",
+        "items": "Предметы",
+        "unit": "Единица",
+        "addItem": "Добавить пункт",
+        "notes": "Заметки",
+        "notePlaceholder": "Дополнительные заметки, видимые на счете",
+        "taxPlaceholder": "Добавить налог",
+        "subtotal": "СУБТОТАЛЬ",
+        "totalAmount": "TOTAL AMOUNT",
+        "status": "Статус",
+        "statusPlaceholder": "Выберите статус",
+        "paidStatus": "Платный статус",
+        "paidStatusPlaceholder": "Выберите платный статус",
+        "fromDate": "От даты",
+        "toDate": "На сегодняшний день",
+        "alert": {
+            "removeDescription": "Вы не сможете восстановить этот счет",
+            "paymentAttachedTitle": "Действия не удались",
+            "paymentAttachedDescription": "Не удается удалить счет-фактуру с существующим платежом",
+            "draftTitle": "Сохранить изменения?"
+        },
+        "empty": {
+            "due": {
+                "title": "У вас нет должного счета",
+                "description": "Этот раздел будет содержать список должных счетов"
+            },
+            "draft": {
+                "title": "У вас нет черновых счетов",
+                "description": "Этот раздел будет содержать список черновых счетов"
+            },
+            "all": {
+                "title": "Вы не создали никаких счетов-фактур"
+            },
+            "title": "Пока нет счетов-фактур!",
+            "description": "Этот раздел будет содержать список счетов-фактур",
+            "buttonTitle": "Добавить новый счет"
+        },
+        "actions": {
+            "downloadPdf": "Скачать PDF",
+            "sendInvoice": "Отправить счет",
+            "editInvoice": "Edit Invoice",
+            "delete": "Удалить",
+            "recordPayment": "Запись платежа",
+            "markAsSent": "Марк как отправленный"
+        }
+    },
+    "customers": {
+        "displayName": "Display name",
+        "contactName": "Имя первичного контакта",
+        "email": "Электронная почта",
+        "name": "Имя",
+        "phone": "Телефон",
+        "website": "Веб-сайт",
+        "currency": "Валюта",
+        "billingAddress": "Биллинг-адрес",
+        "shippingAddress": "Адрес доставки",
+        "enablePortal": "Включаемый портал",
+        "password": "Password",
+        "filterDisplayName": "Имя дисплея",
+        "filterContactName": "Имя контакта",
+        "alertEmailAlreadyInUse": "Электронная почта, которая уже используется",
+        "alertDescription": "Вы не сможете восстановить этого Клиента",
+        "address": {
+            "name": "Name",
+            "country": "Страна",
+            "state": "Государство",
+            "city": "Город",
+            "address": "Адрес",
+            "street1": "Улица1",
+            "street2": "Улица2",
+            "phone": "Телефон",
+            "zipcode": "Код цип",
+            "sameAs": "Копия из адресов Биллинга"
+        },
+        "removeCustomer": "Delete",
+        "empty": {
+            "title": "Пока нет клиентов!",
+            "description": "This section will contain the list of customers.",
+            "buttonTitle": "Add New Customer",
+            "country": {
+                "title": "No Country Available"
+            },
+            "state": {
+                "title": "No State Available"
+            },
+            "city": {
+                "title": "No City Available"
+            }
+        },
+        "title": "Select a Customer",
+        "placeholder": "Select Customer"
+    },
+    "payments": {
+        "date": "Payment Date",
+        "number": "Номер платежа",
+        "customer": "Клиент",
+        "customerPlaceholder": "Выбрать или добавить нового клиента",
+        "mode": "Режим оплаты",
+        "modePlaceholder": "Выбрать режим оплаты",
+        "amount": "Сумма",
+        "notes": "Заметки",
+        "notesPlaceholder": "Дополнительные примечания",
+        "invoice": "Счет-фактура",
+        "invoicePlaceholder": "Выбрать счет-фактуру",
+        "alertAmount": "Введенный платеж превышает общую сумму, причитающаяся по этому счету",
+        "alertDescription": "Вы не сможете восстановить этот платеж",
+        "removePayment": "Delete",
+        "empty": {
+            "title": "No payments yet!",
+            "description": "Этот раздел будет содержать список платежей",
+            "buttonTitle": "Добавить новый платеж"
+        }
+    },
+    "expenses": {
+        "receipt": "Receipt",
+        "date": "Дата расходов",
+        "fromDate": "От даты",
+        "toDate": "На сегодняшний день",
+        "amount": "Сумма",
+        "category": "Категория",
+        "categoryPlaceholder": "Выбрать категорию",
+        "notes": "Заметки",
+        "notesPlaceholder": "Дополнительные примечания",
+        "viewReceipt": "Посмотреть квитанцию",
+        "alertDescription": "Вы не сможете возместить этот расход",
+        "removeExpense": "Удалить",
+        "noCategories": "Пока нет категорий!",
+        "empty": {
+            "title": "No expenses yet!",
+            "description": "This section will contain the list of expenses.",
+            "buttonTitle": "Add New Expense"
+        }
+    },
+    "items": {
+        "title": "Select Item",
+        "name": "Название предмета",
+        "description": "Описание (необязательно)",
+        "quantity": "Количество",
+        "price": "Цена",
+        "subTotal": "СУБТАЛЕ",
+        "discountType": "Тип скидки",
+        "discount": "Скидка",
+        "finalDiscount": "DISCOUNT",
+        "finalAmount": "AMOUNT",
+        "taxes": "Налоги",
+        "selectTax": "Выбрать или добавить новые налоги",
+        "unit": "Единица",
+        "unitPlaceholder": "Выбрать единицу",
+        "alertDescription": "Вы не сможете восстановить этот пункт",
+        "lessAmount": "Общая сумма не должна быть меньше 0",
+        "alreadyAttachTitle": "Действия не удались",
+        "alreadyAttachDescription": "Не удается удалить элемент, который уже используется",
+        "empty": {
+            "title": "No items yet!",
+            "description": "Этот раздел будет содержать список элементов",
+            "buttonTitle": "Добавить новые элементы"
+        }
+    },
+    "more": {
+        "estimate": "Estimates",
+        "items": "Предметы",
+        "reports": "Отчеты",
+        "settings": "Настройки",
+        "logout": "Логу"
+    },
+    "categories": {
+        "title": "Category Name",
+        "description": "Описание",
+        "alertDescription": "Вы не сможете восстановить эту категорию",
+        "alreadyUsed": "Категория, уже используемая",
+        "пустой": {
+            "title": "Пока нет категорий!",
+            "description": "Этот раздел будет содержать список категорий",
+            "buttonTitle": "Добавить новую категорию"
+        }
+    },
+    "settings": {
+        "accountSettings": "Настройки счета",
+        "companyInformation": "Информация о компании",
+        "preference": "Предпочтения",
+        "LanguageAndCurrency": "Язык и Валюта",
+        "notification": "Уведомления",
+        "taxes": "Налоговые типы",
+        "expenseCategory": "Категории расходов",
+        "endpoint": "Конечная точка API",
+        "company": {
+            "name": "Название компании",
+            "email": "Электронная почта",
+            "phone": "Телефон",
+            "address": "Адрес",
+            "street1": "Улица1",
+            "street2": "Улица2",
+            "zipcode": "Код цип",
+            "website": "Веб-сайт",
+            "logo": "Логотип компании"
+        },
+        "account": {
+            "name": "Name",
+            "email": "Электронная почта",
+            "password": "Password",
+            "confirmPassword": "Подтвердить пароль",
+            "version": "Версия",
+            "avatar": "Профильная картинка"
+        },
+        "notifications": {
+            "send": "Отправить уведомления о том, что",
+            "invoiceViewed": "Просмотрено на счету",
+            "invoiceViewedUpdated": "Установка уведомления успешно обновляется",
+            "invoiceViewedDescription": "Когда ваш клиент просматривает ссылку на счет, отправленную по электронной почте",
+            "estimateViewed": "Оценка просмотрено",
+            "estimateViewedDescription": "Когда ваш клиент просматривает ссылку сметы, отправленную по электронной почте",
+            "estimateViewedUpdated": "Установка уведомления успешно обновляется"
+        },
+        "preferences": {
+            "currency": "Валюта",
+            "currencyPlaceholder": "Выберите валюту",
+            "language": "Язык",
+            "languagePlaceholder": "Выбрать язык",
+            "timeZone": "Временная зона",
+            "timeZonePlaceholder": "Выбрать часовую зону",
+            "dateFormat": "Формат даты",
+            "dateFormatPlaceholder": "Выбрать формат даты",
+            "fiscalYear": "Финансовый год",
+            "fiscalYearPlaceholder": "Выбрать финансовый год",
+            "discountSetting": "Настройка скидки",
+            "discountPerItem": "Скидка на товар",
+            "discountPerItemPlaceholder": "Включите это, если вы хотите добавить скидку к отдельным элементам счета-фактуры. По умолчанию скидка добавляется непосредственно к счету-фактуре.",
+            "taxPerItem": "Налог на пункт",
+            "taxPerItemPlaceholder": "Включите это, если вы хотите добавить налог к отдельным элементам счета-фактуры. По умолчанию налог добавляется непосредственно к счету.",
+            "settingUpdate": "Установка успешной настройки"
+        }
+    },
+    "login": {
+        "email": "Введите свою электронную почту",
+        "password": "Введите свой пароль",
+        "invalid": "Недействительные полномочия"
+    },
+    "logout": {
+        "confirmation": "Вы уверены, что хотите выйти из системы?",
+        "title": "Логу"
+    },
+    "forgot": {
+        "emailLabel": "Введите свою электронную почту, и мы отправим вам сбросить ссылку на пароли",
+        "emailPlaceholder": "Введите свою электронную почту",
+        "emailSendTitle": "Проверь электронную почту",
+        "emailSendDescription": "Ссылка на сбрасывание пароля была отправлена на вашу электронную почту, пожалуйста, следуйте инструкциям по электронной почте, чтобы создать новый пароль",
+        "emailSendError": "Электронная почта не может быть отправлена на этот адрес электронной почты"
+    },
+    "lostInternet": {
+        "title": "Соединение потеряно",
+        "description": "Пожалуйста, проверьте настройки мобильного телефона или Wi-Fi, чтобы проверить подключение к Интернету, а затем повторите попытку"
+    },
+    "updateApp": {
+        "title": "Версия приложения истекла!",
+        "description": "Эта версия приложения устарела. Пожалуйста, установите последнее обновление, чтобы продолжать использовать кратер"
+    },
+    "endpoint": {
+        "endpointURL": "Конечный URL",
+        "endpointDesc": "Выше URL будет использоваться для подключения к вашей самостоятельной установке кратера",
+        "urlPlaceHolder": "Например: https://craterapp.com",
+        "alertInvalidUrl": "Неверная ссылка"
+    },
+    "estimates": {
+        "tabs": {
+            "SENT": "Сент",
+            "DRAFT": "Проект",
+            "ALL": "Все"
+        },
+        "estimateDate": "Оценка Даты",
+        "expiryDate": "Дата истечения срока действия",
+        "discount": "DISCOUNT",
+        "estimateNumber": "Оценочное число",
+        "template": "Шаблон",
+        "templatePlaceholder": "Выберите или добавьте новый шаблон",
+        "customer": "Клиент",
+        "customerPlaceholder": "Выбрать или добавить нового клиента",
+        "items": "Предметы",
+        "unit": "Единица",
+        "taxPlaceholder": "Добавить налог",
+        "addItem": "Добавить пункт",
+        "notes": "Заметки",
+        "notePlaceholder": "Дополнительные заметки, видимые по смете",
+        "fromDate": "От даты",
+        "toDate": "На сегодняшний день",
+        "status": "Статус",
+        "statusPlaceholder": "Выберите статус",
+        "subtotal": "СУБТОТАЛЬ",
+        "tax": "ТАКС",
+        "totalAmount": "TOTAL AMOUNT",
+        "alert": {
+            "convertToInvoiceDescription": "Вы уверены, что хотите преобразовать эту оценку в счет-фактуру?",
+            "removeDescription": "Вы не сможете восстановить эту оценку",
+            "lessAmount": "Общая сумма не должна быть меньше 0",
+            "draftTitle": "Сохранить изменения?"
+        },
+        "empty": {
+            "sent": {
+                "title": "У вас нет отправленных оценок",
+                "description": "Этот раздел будет содержать список отправленных оценок"
+            },
+            "draft": {
+                "title": "У вас нет черновик овак",
+                "description": "Этот раздел будет содержать список проектов оценок"
+            },
+            "all": {
+                "title": "Вы не создали никаких оценок",
+                "description": "Этот раздел будет содержать список оценок"
+            },
+            "buttonTitle": "Добавление новой оценки"
+        },
+        "actions": {
+            "downloadPdf": "Скачать PDF",
+            "sendEstimate": "Отправить оценку",
+            "editEstimate": "Оценка Изелик",
+            "delete": "Удалить",
+            "convertToInvoice": "Преобразование в счет",
+            "markAsSent": "Марк как сента",
+            "markAsAccepted": "Марк как принято",
+            "markAsRejected": "Марк как отвергнутый"
+        }
+    },
+    "currencies": {
+        "title": "Выберите валюту",
+        "empty": {
+            "title": "No currencies yet!"
+        }
+    },
+    "languages": {
+        "title": "Select Language",
+        "empty": {
+            "title": "No languages yet!",
+            "description": "This section will contain the list of Languages."
+        }
+    },
+    "timeZones": {
+        "title": "Select TimeZone",
+        "empty": {
+            "title": "No TimeZones yet!",
+            "description": "This section will contain the list of Timezones."
+        }
+    },
+    "dateFormats": {
+        "title": "Select Date Format",
+        "empty": {
+            "title": "No date formats yet!",
+            "description": "This section will contain the list of Date Formats."
+        }
+    },
+    "fiscalYears": {
+        "title": "Select financial year",
+        "empty": {
+            "title": "No Financial Years yet!",
+            "description": "This section will contain the list of Financial Years."
+        }
+    },
+    "countries": {
+        "empty": {
+            "title": "No countries yet!"
+        }
+    },
+    "reports": {
+        "sales": "Sales",
+        "profitAndLoss": "Прибыль и убыток",
+        "expenses": "Расходы",
+        "taxes": "Налоги",
+        "dateRange": "Выбрать диапазон дат",
+        "fromDate": "От даты",
+        "toDate": "На сегодняшний день",
+        "reportType": "Тип отчета",
+        "byCustomer": "Заказчиком",
+        "byItem": "По пункту",
+        "today": "Сегодня",
+        "thisWeek": "На этой неделе",
+        "thisMonth": "Этот месяц",
+        "thisQuarter": "Этот квартал",
+        "thisYear": "В этом году",
+        "currentFiscalQuarter": "Текущий финансовый квартал",
+        "currentFiscalYear": "Текущий финансовый год",
+        "previousWeek": "Предыдущая неделя",
+        "previousMonth": "Предыдущий месяц",
+        "previousQuarter": "Предыдущий квартал",
+        "previousYear": "Предыдущий год",
+        "previousFiscalQuarter": "Предыдущий финансовый квартал",
+        "previousFiscalYear": "Предыдущий финансовый год",
+        "custom": "Таможня"
+    },
+    "taxes": {
+        "title": "Taxes",
+        "type": "Налоговое имя",
+        "description": "Описание",
+        "percentage": "Налоговый процент",
+        "compoundTax": "Совокупный налог",
+        "alertDescription": "Вы не сможете взыскать этот налог",
+        "alreadyUsed": "Налог, который уже используется",
+        "пустой": {
+            "title": "Никаких типов налогов еще!",
+            "description": "Этот раздел будет содержать список налоговых типов",
+            "buttonTitle": "Добавить тип налога"
+        }
+    },
+    "filePicker": {
+        "file": "Нажмите здесь, чтобы выбрать файл",
+        "permission": "Sorry, we need camera roll permissions to make this work!"
+    },
+    "alert": {
+        "title": "Are you sure?",
+        "exit": "Are you sure want to exit?",
+        "action": {
+            "discard": "Discard",
+            "saveAsDraft": "Save As Draft",
+            "emailNotExist": "User email does not exist"
+        }
+    },
+    "button": {
+        "remove": "Remove",
+        "save": "Спасти",
+        "edit": "Эдит",
+        "retry": "Ретри",
+        "done": "Сделано",
+        "skip": "Скип",
+        "clear": "Ясно",
+        "viewPdf": "Посмотреть PDF",
+        "singIn": "Войти",
+        "singInGoogle": "Войти в Google",
+        "forget": "Забудьте пароль?",
+        "update": "Обновление",
+        "updateCapital": "ОБНОВЛЕНИЕ",
+        "chooseTemplate": "Выбери шаблон",
+        "generateReport": "Отчет о генерации",
+        "recoveryEmail": "Отправить ссылку на сбросить",
+        "recoveryEmailAgain": "Отправить снова"
+    },
+    "filter": {
+        "empty": {
+            "filterTitle": "Результаты не найдены"
+        }
+    },
+    "search": {
+        "title": "Search",
+        "noResult": "Нет результатов для {{search}}",
+        "noSearchResult": "Ненайдено"
+    },
+    "validation": {
+        "Customer": "Клиент",
+        "Invoice": "Счет-фактура",
+        "required": "Обязательное поле пусто",
+        "field": "Поле {{hint}} обязательно для заполнения",
+        "choose": "Выбери хотя бы один предмет",
+        "email": "Пожалуйста, введите действительный адрес электронной почты",
+        "passwordCompare": "Паросы не совпадают",
+        "minimumNumber": "должно быть больше, чем 0",
+        "maximumNumber": "должно быть меньше {{maxNumber}}",
+        "numeric": "должен быть числовым",
+        "moreThanDue": "Подсказка не должна быть больше, чем причитающаяся сумма",
+        "url": "Недействительный URL(например: https://craterapp.com)"
+    }
+}
