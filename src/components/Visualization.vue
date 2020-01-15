@@ -4,40 +4,34 @@
     <div class="main">
       <div class="container">
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-4">
             <img
               class="logo"
               src="https://ucarecdn.com/c31be959-f604-4eb4-bdc5-cd28db8c8da8/logo.png"
             />
           </div>
-          <div class="col-md-9">
+          <div class="col-md-8">
             <div class="row">
               <div class="col-md-12 mb-2">
-                <span class="logo-text">
+                <span class="logo-text coloredText">
                   ГЕОПОРТАЛ ГГК
                   <br />Республики Узбекистан
                 </span>
               </div>
-              <div class="col-md-12 mb-2">
-                <form class="form-inline my-2 my-lg-0 sao-control">
-                  <input
-                    class="form-control form-control-sm mr-sm-2"
-                    type="search"
-                    placeholder="Поиск"
-                    aria-label="Search"
-                  />
-                  <button class="btn btn-outline my-2 my-sm-0" type="button">Поиск</button>
-                </form>
-              </div>
             </div>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="control-icon" @click="showControl = !showControl">
+            <img src="../images/i6.png" width="28px" height="28px" />
           </div>
         </div>
       </div>
     </div>
     <!-- /header -->
     <!-- controller -->
-    
-    <div class="control">
+<transition name="fade"  key="3">
+    <div class="control" v-if="showControl">
       <div id="submenu" class="submenu">
         <div
           class="menu-items"
@@ -52,8 +46,7 @@
         </div>
       </div>
 
-
-      <div id="sub2menu" v-if="showMiddleMenu">
+      <div id="sub2menu" class="submenuCommon" v-if="showMiddleMenu">
         <span id="close_sub2menu" @click="showMiddleMenu = !showMiddleMenu">
           <i class="fa fa-window-close" aria-hidden="true"></i>
         </span>
@@ -66,29 +59,28 @@
         </div>
       </div>
 
-<!-- table is shown from this menu -->
-      <div id="sub3menu" v-if="showSubmenu">
+      <!-- table is shown from this menu -->
+      <div id="sub3menu" class="submenuCommon" v-if="showSubmenu">
         <span id="close_sub3menu" @click="showSubmenu = !showSubmenu">
           <i class="fa fa-window-close" aria-hidden="true"></i>
         </span>
         <br />
         <h4 id="p_sub2menu">{{sub3name}}</h4>
         <hr />
-        <div v-bind:key="index" v-for="(i, index) in list3">
-          <input
-            type="checkbox"
-            data-layer_name="proekti"
-            class="obj_sub_checkbox"
-            id="proekti_id"
-            v-model="checked_id"
-          />
-          <label class="info_label" @click="showTableFunc">{{i.name}}</label>
+        <div v-bind:key="index" v-for="(i, index) in list3" class="roundedOne">
+          <div class="row">
+            <div class="col-md-2">
+              <v-checkbox color="info"></v-checkbox>
+            </div>
+            <div class="col-md-10">
+              <label class="info_label" @click="showTableFunc">{{i.name}}</label>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-<!-- table is shown from this menu -->
-
-
+    <!-- table is shown from this menu -->
+</transition>
     <!-- controller -->
 
     <l-map
@@ -107,6 +99,23 @@
     <VuetifyDatatable class="data" v-if="showTable" />
 
     <div class="right-control">
+      <div class="search">
+        <!-- <div class="control-icon">
+        <i class="fa fa-search"></i>
+        </div>-->
+        <form class="form-inline my-2 my-lg-0 sao-control">
+          <input
+            class="form-control form-control-sm mr-sm-2"
+            type="search"
+            placeholder="Поиск"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline my-2 my-sm-0" type="button">
+            <i class="fa fa-search"></i>
+          </button>
+        </form>
+      </div>
+
       <div class="control-icon" v-bind:key="index" v-for="(icon, index) in rightControlIcons">
         <img v-bind:src="icon" style="opacity: 0.85;" width="28px" height="28px" />
       </div>
@@ -149,6 +158,7 @@ export default {
       marker: L.latLng(41.289994, 69.147866),
       statesData: {},
       showMap: true,
+      showControl: false,
       list2: [],
       list3: [],
       list: [
@@ -276,17 +286,17 @@ export default {
     showSubmenuFunc(index) {
       this.showSubmenu = false;
       this.showMiddleMenu = false;
-      this.sub3name = '';
+      this.sub3name = "";
       this.list2 = this.list[index].sub2;
       if (this.list2) {
-        if(this.list2[0].sub3){
+        if (this.list2[0].sub3) {
           this.showMiddleMenu = true;
-        }else{
+        } else {
           this.showSubmenu = true;
           this.list3 = this.list2;
           this.sub3name = this.list[index].name;
         }
-      } 
+      }
       this.sub2name = this.list[index].name;
     },
     showMiddleMenuFunc(index) {
@@ -358,6 +368,12 @@ iframe:focus,
 .form-control:focus {
   box-shadow: none;
 }
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  opacity: 0;
+}
 #visualization {
   position: relative;
   height: 100vh;
@@ -373,9 +389,9 @@ iframe:focus,
   border-radius: 8px;
   top: 5px;
   left: 10px;
-  width: 25%;
+  min-width: 372px;
   line-height: 10px;
-  height: 100px;
+  height: 66px;
   transition: 0.2s;
   font-size: medium;
   font-weight: 100;
@@ -405,16 +421,14 @@ iframe:focus,
   background-color: #ffffff;
   opacity: 1;
   z-index: 3333;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  box-shadow: 1px 2px 6px 0 rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.65);
   padding: 10px;
   border-radius: 8px;
-  top: 110px;
+  top: 250px;
   left: 10px;
-  width: 25%;
+  min-width: 372px;
   line-height: 10px;
-  height: 480px;
+  min-height: 385px;
   transition: 0.2s;
   font-size: medium;
   font-weight: 100;
@@ -443,7 +457,8 @@ iframe:focus,
   position: absolute;
   right: 15px;
   z-index: 1000;
-  top: 50px;
+  top: 20px;
+  text-align: -webkit-right;
 }
 .control-icon {
   width: 50px;
@@ -459,28 +474,21 @@ iframe:focus,
 .data {
   position: relative;
   z-index: 2;
-  margin-left: 26%;
+  margin-left: 22%;
 }
-#sub2menu {
-  border: 1px solid rgba(0, 0, 0, 0.25);
+.submenuCommon {
+  border-left: 2px solid rgba(31, 121, 200, 0.4);
   padding: 10px;
   position: absolute;
   top: 0;
   background: #fff;
   right: 0;
-  width: 91%;
+  width: 88%;
   height: 100%;
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
 }
-#sub3menu {
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  padding: 10px;
-  position: absolute;
-  top: 0;
-  background: #fff;
-  right: 0;
-  width: 91%;
-  height: 100%;
-}
+
 #close_sub2menu {
   cursor: pointer;
   float: right;
@@ -498,5 +506,27 @@ iframe:focus,
 }
 .info_label {
   cursor: pointer;
+  line-height: 24px;
+}
+#sub3menu .info_label {
+  margin-left: -25px;
+}
+.coloredText,
+i {
+  color: rgb(31, 121, 200);
+}
+.v-input--selection-controls {
+  margin-top: 0;
+}
+.search {
+  background: #fff;
+  display: block;
+  padding: 9px;
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 10px;
+  -webkit-box-shadow: 1px 2px 6px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 2px 6px 0 rgba(0, 0, 0, 0.25);
+  z-index: -1;
+  margin-bottom: 10px;
 }
 </style>

@@ -4,53 +4,67 @@
       <v-card-title>
         <v-text-field v-model="search" append-icon="search" label="Search" single-line hide-details></v-text-field>
       </v-card-title>
-      <v-data-table :headers="headers" :items="items" :search="search"></v-data-table>
+      <beat-loader :loading="loading" color="#1f79c8" size="20px"></beat-loader>
+      <v-data-table v-if="!loading" :headers="headers" :items="items" :search="search"></v-data-table>
     </v-card>
   </v-container>
 </template>
     
 
 <script>
-import $ from 'jquery'
+import $ from "jquery";
+import Loading from "./Loading";
+import BeatLoader from 'vue-spinner/src/BeatLoader.vue'
 export default {
   name: "VuetifyDatatable",
   created() {
     this.getListData();
   },
+  components: {
+    BeatLoader
+  },
   methods: {
     getListData: function() {
-      var root = "https://mygov.achilov.dev/development-architectural-planning-v2/rest-api";
+      var root = "https://gis.achilov.dev/api/v1/reconstruction-objects";
       var vm = this;
-
+      vm.loading = true;
       $.ajax({
-        url: root + "/get-task?id=5682001",
+        url: root + "/daily/2019-10-10",
         method: "GET"
       }).then(function(data) {
-        var result = data.entities.DevelopmentArchitecturalPlanning;
-        
-        vm.items = result;
-        console.log(vm.items)
+        var obj = data.reconstructionObjects;
+        var result = Object.keys(obj).map(function(key) {
+          return [Number(key), obj[key]];
+        });
+        var arr2 = [];
+        for (var i = 0; i < result.length; i++) {
+          arr2.push(result[i][1]);
+        }
+        for (const [key, value] of Object.entries(arr2[0])) {
+          vm.headers.push({
+            text: value,
+            value: key
+          });
+        }
+        arr2 = arr2.slice(1);
+        vm.items = arr2;
+        vm.loading = false;
       });
     }
   },
   data() {
     return {
       search: "",
-      headers: [
-        {
-          text: "id",
-          align: "left",
-          filterable: false,
-          value: "id"
-        },
-        { text: "authority_id", value: "authority_id" },
-        { text: "legal_entity_tin", value: "legal_entity_tin" },
-        { text: "legal_entity_name", value: "legal_entity_name" },
-        { text: "legal_entity_email", value: "legal_entity_email" },
-        { text: "legal_entity_address", value: "legal_entity_address" }
-      ],
-      items: []
+      headers: [],
+      items: [],
+      loading: false
     };
   }
 };
 </script>
+<style scoped>
+.v-spinner{
+  text-align: center;
+ 
+}
+</style>
