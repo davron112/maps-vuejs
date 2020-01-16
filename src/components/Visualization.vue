@@ -23,7 +23,7 @@
         </div>
         <div class="row mt-3">
           <div class="control-icon" @click="showControl = !showControl">
-            <img src="../images/i6.png" width="28px" height="28px" />
+            <img src="../images/i6.png" width="35px" height="35px" />
           </div>
         </div>
       </div>
@@ -117,7 +117,7 @@
       </div>
 
       <div class="control-icon" v-bind:key="index" v-for="(icon, index) in rightControlIcons">
-        <img v-bind:src="icon" style="opacity: 0.85;" width="28px" height="28px" />
+        <img v-bind:src="icon" style="opacity: 0.85;" width="35px" height="35px" />
       </div>
     </div>
   </div>
@@ -210,8 +210,6 @@ export default {
         require("../images/i2.png"),
         require("../images/i3.png"),
         require("../images/i4.png"),
-        require("../images/i5.png"),
-        require("../images/i6.png"),
         require("../images/i7.png"),
         require("../images/i8.png"),
         require("../images/i9.png"),
@@ -464,10 +462,11 @@ iframe:focus,
   width: 50px;
   height: 50px;
   text-align: center;
-  padding-top: 10px;
-  background: rgba(255, 255, 255, 0.97);
-  border-radius: 10px;
-  box-shadow: 1px 2px 6px 0 rgba(0, 0, 0, 0.25);
+  padding-top: 7px;
+  background: #1f79c8;
+  border-radius: 50%;
+  -webkit-box-shadow: 1px 2px 6px 0 rgba(0,0,0,.25);
+  box-shadow: 1px 2px 6px 0 rgba(0,0,0,.25);
   cursor: pointer;
   margin-bottom: 5px;
 }
