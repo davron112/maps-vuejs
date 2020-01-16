@@ -1,33 +1,7 @@
 <template>
   <div id="visualization">
     <!-- header -->
-    <div class="main">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <img
-              class="logo"
-              src="https://ucarecdn.com/c31be959-f604-4eb4-bdc5-cd28db8c8da8/logo.png"
-            />
-          </div>
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-12 mb-2">
-                <span class="logo-text coloredText">
-                  ГЕОПОРТАЛ ГГК
-                  <br />Республики Узбекистан
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row mt-3">
-          <div class="control-icon" @click="showControl = !showControl">
-            <img src="../images/i6.png" width="35px" height="35px" />
-          </div>
-        </div>
-      </div>
-    </div>
+      <Header :showControl="showControl" @clicked-show-control="changeValue"/>
     <!-- /header -->
     <!-- controller -->
 <transition name="fade"  key="3">
@@ -96,7 +70,12 @@
       <l-marker :lat-lng="marker"></l-marker>
     </l-map>
 
-    <VuetifyDatatable class="data" v-if="showTable" />
+    <VuetifyDatatable 
+    class="data"
+     v-show="showTable" 
+     :showTable="showTable" 
+     @clicked-show-table="clickedShowTable"
+     />
 
     <div class="right-control">
       <div class="search">
@@ -127,6 +106,7 @@
 import L from "leaflet";
 import { LMap, LTileLayer, LMarker, LGeoJson } from "vue2-leaflet";
 import data from "../assets/geojson/us-states";
+import Header from "./Header";
 import VuetifyDatatable from "./VuetifyDatatable";
 
 delete L.Icon.Default.prototype._getIconUrl;
@@ -146,7 +126,8 @@ export default {
     LTileLayer,
     LMarker,
     LGeoJson,
-    VuetifyDatatable
+    VuetifyDatatable,
+    Header
   },
   data() {
     return {
@@ -158,7 +139,7 @@ export default {
       marker: L.latLng(41.289994, 69.147866),
       statesData: {},
       showMap: true,
-      showControl: false,
+      showControl: true,
       list2: [],
       list3: [],
       list: [
@@ -310,7 +291,13 @@ export default {
       }
     },
     showTableFunc() {
-      this.showTable = !this.showTable;
+      this.showTable = true;
+    },
+     changeValue (value) {
+      this.showControl = value
+    },
+    clickedShowTable(value){
+      this.showTable = value
     }
   },
   created() {
@@ -344,28 +331,7 @@ export default {
 
 <style scoped lang="scss">
 @import "~leaflet/dist/leaflet.css";
-input:not([disabled]):focus,
-select:not([disabled]):focus,
-textarea:not([disabled]):focus,
-button:not([disabled]):focus,
-iframe:focus,
-[href]:focus,
-[tabindex]:focus,
-[contentEditable="true"]:focus,
-:focus {
-  outline: none;
-  outline-offset: 0;
-}
 
-.btn.focus,
-.btn:focus {
-  outline: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-.form-control:focus {
-  box-shadow: none;
-}
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;
 }
@@ -376,35 +342,7 @@ iframe:focus,
   position: relative;
   height: 100vh;
 }
-.main {
-  position: fixed;
-  background-color: #ffffff;
-  opacity: 1;
-  z-index: 3333;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  box-shadow: 1px 2px 6px 0 rgba(0, 0, 0, 0.25);
-  border-radius: 8px;
-  top: 5px;
-  left: 10px;
-  min-width: 372px;
-  line-height: 10px;
-  height: 66px;
-  transition: 0.2s;
-  font-size: medium;
-  font-weight: 100;
-}
-.logo {
-  width: 100%;
-  height: 100%;
-  object-fit: none;
-}
-.logo-text {
-  color: rgba(0, 0, 0, 0.65);
-  font-weight: bold;
-  line-height: 18px;
-  font-size: 16px;
-}
+
 .sao-control .form-control-sm {
   //height: 22px;
   line-height: 22px;

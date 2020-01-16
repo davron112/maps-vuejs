@@ -95,4 +95,30 @@ export default {
 body .v-application {
   font-family: "M PLUS Rounded 1c", sans-serif;
 }
+input:not([disabled]):focus,
+select:not([disabled]):focus,
+textarea:not([disabled]):focus,
+button:not([disabled]):focus,
+iframe:focus,
+[href]:focus,
+[tabindex]:focus,
+[contentEditable="true"]:focus,
+:focus {
+  outline: none;
+  outline-offset: 0;
+}
+
+.btn.focus,
+.btn:focus {
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.form-control:focus {
+  box-shadow: none;
+}
+.coloredText,
+i {
+  color: rgb(31, 121, 200);
+}
 </style>

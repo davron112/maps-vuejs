@@ -1,11 +1,17 @@
 <template>
   <v-container>
     <v-card>
+      <span class="icons" >
+          <i class="fa fa-minus" aria-hidden="true" @click="minimize"></i>
+          <i class="fa fa-window-close" aria-hidden="true" @click="changeValue"></i>
+      </span>
+      <div id="vTable">
       <v-card-title>
         <v-text-field v-model="search" append-icon="search" label="Search" single-line hide-details></v-text-field>
       </v-card-title>
       <beat-loader :loading="loading" color="#1f79c8" size="20px"></beat-loader>
       <v-data-table v-if="!loading" :headers="headers" :items="items" :search="search"></v-data-table>
+      </div>
     </v-card>
   </v-container>
 </template>
@@ -23,7 +29,21 @@ export default {
   components: {
     BeatLoader
   },
+   data() {
+    return {
+       isOpen: this.showTable
+    }
+  },
+   props: ['showTable'],
   methods: {
+    changeValue(){
+      this.isOpen= !this.isOpen;
+      this.$emit('clicked-show-table', false)
+    },
+    minimize(){
+       $('#vTable').slideToggle(500, function () {   
+    });
+    },
     getListData: function() {
       var root = "https://gis.achilov.dev/api/v1/reconstruction-objects";
       var vm = this;
@@ -66,5 +86,15 @@ export default {
 .v-spinner{
   text-align: center;
  
+}
+.icons{
+    cursor: pointer;
+    float: right;
+    font-size: 16px;
+    background: #1f79c8;
+}
+.icons i{
+  margin: 5px;
+  color: #fff;
 }
 </style>
